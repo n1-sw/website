@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+        name="description"
+        content="Abid Hasan Sajid - Modern Portfolio showcasing skills & shop. Web developer and student from Bangladesh passionate about programming and modern design."
+    />
+    <meta
+        name="keywords"
+        content="Abid Hasan Sajid, web developer, student, Bangladesh, programming, modern design, Seller"
+    />
+    <meta name="author" content="Abid Hasan Sajid" />
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abidhasansajid.me/" />
+    <meta property="og:title" content="Abid Hasan Sajid - Info & Shop" />
+    <meta property="og:description" content="Web developer and student from Bangladesh. Explore my skills, projects, and shop for Discord Nitro, Effects, and more!" />
+    <meta property="og:image" content="img/hero-avatar.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Abid Hasan Sajid Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://abidhasansajid.me/" />
+    <meta name="twitter:title" content="Abid Hasan Sajid - Info & Shop" />
+    <meta name="twitter:description" content="Web developer and student from Bangladesh. Explore my skills, projects, and shop for Discord Nitro, Effects, and more!" />
+    <meta name="twitter:image" content="img/hero-avatar.png" />
+    <meta name="twitter:creator" content="@n1_yvl" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://abidhasansajid.me/" />
+
+    <title>Abid Hasan Sajid.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <!-- Remix Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<!-- Main Code start -->
+    <body>
+        <div id="loading-screen" class="loading-screen">
+            <div class="loader-container">
+                <div class="loader-logo">
+                    <span class="logo-s">Abid.</span>
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-slash">/</span>
+                    <span class="logo-bracket">&gt;</span>
+                </div>
+                <div class="loading-text">
+                    Initializing<span class="dots"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+
+        <div class="particles-bg" id="particles-bg"></div>
+
+        <div id="security-warning" class="security-warning">
+            <div class="security-warning-content">
+                <i class="fas fa-shield-alt security-icon"></i>
+                <h2>Security Alert!</h2>
+                <p id="security-message">Unauthorized action detected!</p>
+                <button
+                    onclick="closeSecurityWarning()"
+                    class="btn btn--primary"
+                >
+                    Understood
+                </button>
+            </div>
+        </div>
+
+        <header id="header" class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="index.html" class="nav__brand">
+                        <span class="brand-text">ABID.</span>
+                        <i class="ri-code-s-slash-line"></i>
+                    </a>
+                    <div class="nav__menu" id="nav-menu">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="#hero" class="nav__link">Home</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#about" class="nav__link">About</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#projects" class="nav__link">Projects</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#discord" class="nav__link">Discord</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#shop" class="nav__link">Shop</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#contact" class="nav__link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav__actions">
+                        <button
+                            id="theme-toggle"
+                            class="theme-toggle"
+                            aria-label="Toggle theme"
+                        >
+                            <i class="fas fa-sun"></i>
+                        </button>
+                        <div class="nav__toggle">
+                            <i id="nav-toggle" class="ri-menu-3-line"></i>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <section id="hero" class="hero">
+                <div class="hero-bg-gradient"></div>
+                <div class="container">
+                    <div class="hero__wrapper">
+                        <div class="hero__content">
+                            <div class="hero__badge">
+                                <span class="badge-dot"></span>
+                              🇧🇩 Bangladesh
+                            </div>
+                            <h1 class="hero__title">
+                                <span class="title-line">Hi, I am</span>
+                                <span class="title-highlight">
+                                    <span class="typing-text"></span>
+                                    <span class="cursor-blink">|</span>
+                                </span>
+                                <span class="title-line typing-role"></span>
+                            </h1>
+                            <p class="hero__description">
+                                Crafting beautiful digital experiences with
+                                code. Passionate about web development and
+                                open-source projects.
+                            </p>
+                            <div class="hero__buttons">
+                                <a href="#contact" class="btn btn--primary">
+                                    <span>Get In Touch</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="#about" class="btn btn--secondary">
+                                    <span>Learn More</span>
+                                </a>
+                            </div>
+                            <div class="hero__social">
+                                <a
+                                    href="https://github.com/n1-sw"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hero__social-link"
+                                    title="GitHub"
+                                >
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/n1.yvl/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hero__social-link"
+                                    title="Instagram"
+                                >
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a
+                                    href="https://discord.com/users/698131338846404609"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hero__social-link"
+                                    title="Discord User"
+                                >
+                                    <i class="fab fa-discord"></i>
+                                </a>
+                                <a
+                                    href="https://discord.gg/cExzdw4SsY"
+                                    class="hero__social-link"
+                                    title="Discord Server"
+                                >
+                                    <i class="fas fa-server"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero__img-wrapper">
+                            <div class="hero__img-bg"></div>
+                            <img 
+                                src="img/hero-avatar.png"
+                                alt="Profile Picture" 
+                                class="hero__img"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="mouse-wheel"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section about">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__subtitle">Get To Know Me</span>
+                        <h2 class="section__title">About Me</h2>
+                    </div>
+                    <div class="about__wrapper">
+                        <div class="about__content">
+                            <h3 class="about__title">
+                                I'm a Student, Seller & Developer
+                            </h3>
+                            <p class="about__description">
+                                I am Abid Hasan Sajid, an 18+ year old student
+                                from Bangladesh. I am currently studying at
+                                college.
+                            </p>
+                            <p class="about__description">
+                                I love building open-source projects and sharing
+                                them with the community, especially those which
+                                help or entertain others and bring happiness to
+                                their lives, making them discover new kinds of
+                                stuff to learn.
+                            </p>
+                            <p class="about__description">
+                                I spend my free time programming and coding more
+                                efficiently, developing projects, listening to
+                                music, browsing the web, and connecting with
+                                people on social media!
+                            </p>
+                            <div class="about__stats">
+                                <div class="stat-box">
+                                    <span class="stat-number">17+</span>
+                                    <span class="stat-label">Age</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">40+</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label">Passion</span>
+                                </div>
+                            </div>
+                            <a
+                                href="#contact"
+                                class="btn btn--primary"
+                            >
+                                <i class="fas fa-user"></i>
+                                <span>Contact Me</span>
+                            </a>
+                        </div>
+                        <div class="skills">
+                            <h3 class="skills__title">Technical Skills</h3>
+                            <div class="skills__list">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">
+                                            <i class="fab fa-java"></i>
+                                            Java
+                                        </span>
+                                        <span class="skill-percentage">35%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div
+                                            class="skill-progress"
+                                            data-progress="35"
+                                        ></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">
+                                            <i class="fab fa-node-js"></i>
+                                            Node.js
+                                        </span>
+                                        <span class="skill-percentage">60%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div
+                                            class="skill-progress"
+                                            data-progress="60"
+                                        ></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">
+                                            <i class="fab fa-html5"></i>
+                                            HTML5
+                                        </span>
+                                        <span class="skill-percentage">95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div
+                                            class="skill-progress"
+                                            data-progress="95"
+                                        ></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">
+                                            <i class="fab fa-css3-alt"></i>
+                                            CSS3
+                                        </span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div
+                                            class="skill-progress"
+                                            data-progress="90"
+                                        ></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">
+                                            <i class="fab fa-js"></i>
+                                            JavaScript
+                                        </span>
+                                        <span class="skill-percentage">58%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div
+                                            class="skill-progress"
+                                            data-progress="58"
+                                        ></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">
+                                            <i class="fab fa-github"></i>
+                                            GitHub
+                                        </span>
+                                        <span class="skill-percentage">92%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div
+                                            class="skill-progress"
+                                            data-progress="92"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section github-projects">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__subtitle">Open Source Contributions</span>
+                        <h2 class="section__title">GitHub Projects</h2>
+                    </div>
+                    <div class="github-grid">
+                        <div class="github-card">
+                            <div class="github-card__header">
+                                <i class="fab fa-github github-card__icon"></i>
+                                <div class="github-card__stars">
+                                    <i class="fas fa-star"></i>
+                                    <span>42</span>
+                                </div>
+                            </div>
+                            <h3 class="github-card__title">Discord Bot Framework</h3>
+                            <p class="github-card__description">
+                                A powerful and easy-to-use framework for building Discord bots with advanced features, modular commands, and event handling.
+                            </p>
+                            <div class="github-card__footer">
+                                <div class="github-card__language">
+                                    <span class="language-dot" style="background: #f1e05a;"></span>
+                                    JavaScript
+                                </div>
+                                <a href="https://github.com/n1-sw" target="_blank" rel="noopener noreferrer" class="github-card__link">
+                                    <span>View Project</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="github-card">
+                            <div class="github-card__header">
+                                <i class="fab fa-github github-card__icon"></i>
+                                <div class="github-card__stars">
+                                    <i class="fas fa-star"></i>
+                                    <span>38</span>
+                                </div>
+                            </div>
+                            <h3 class="github-card__title">Portfolio Website</h3>
+                            <p class="github-card__description">
+                                Modern responsive portfolio website with advanced UI/UX, animations, and interactive features built with vanilla JavaScript.
+                            </p>
+                            <div class="github-card__footer">
+                                <div class="github-card__language">
+                                    <span class="language-dot" style="background: #e34c26;"></span>
+                                    HTML/CSS
+                                </div>
+                                <a href="https://github.com/n1-sw" target="_blank" rel="noopener noreferrer" class="github-card__link">
+                                    <span>View Project</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="github-card">
+                            <div class="github-card__header">
+                                <i class="fab fa-github github-card__icon"></i>
+                                <div class="github-card__stars">
+                                    <i class="fas fa-star"></i>
+                                    <span>27</span>
+                                </div>
+                            </div>
+                            <h3 class="github-card__title">Node.js API Server</h3>
+                            <p class="github-card__description">
+                                RESTful API server built with Node.js and Express, featuring authentication, rate limiting, and comprehensive documentation.
+                            </p>
+                            <div class="github-card__footer">
+                                <div class="github-card__language">
+                                    <span class="language-dot" style="background: #68a063;"></span>
+                                    Node.js
+                                </div>
+                                <a href="https://github.com/n1-sw" target="_blank" rel="noopener noreferrer" class="github-card__link">
+                                    <span>View Project</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="github-card">
+                            <div class="github-card__header">
+                                <i class="fab fa-github github-card__icon"></i>
+                                <div class="github-card__stars">
+                                    <i class="fas fa-star"></i>
+                                    <span>33</span>
+                                </div>
+                            </div>
+                            <h3 class="github-card__title">Web Scraper Tool</h3>
+                            <p class="github-card__description">
+                                Efficient web scraping tool with proxy support, data extraction, and automated scheduling for data collection tasks.
+                            </p>
+                            <div class="github-card__footer">
+                                <div class="github-card__language">
+                                    <span class="language-dot" style="background: #3572A5;"></span>
+                                    Python
+                                </div>
+                                <a href="https://github.com/n1-sw" target="_blank" rel="noopener noreferrer" class="github-card__link">
+                                    <span>View Project</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="github-card">
+                            <div class="github-card__header">
+                                <i class="fab fa-github github-card__icon"></i>
+                                <div class="github-card__stars">
+                                    <i class="fas fa-star"></i>
+                                    <span>19</span>
+                                </div>
+                            </div>
+                            <h3 class="github-card__title">Crypto Price Tracker</h3>
+                            <p class="github-card__description">
+                                Real-time cryptocurrency price tracking dashboard with charts, alerts, and portfolio management features.
+                            </p>
+                            <div class="github-card__footer">
+                                <div class="github-card__language">
+                                    <span class="language-dot" style="background: #f1e05a;"></span>
+                                    JavaScript
+                                </div>
+                                <a href="https://github.com/n1-sw" target="_blank" rel="noopener noreferrer" class="github-card__link">
+                                    <span>View Project</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="discord" class="section discord-section">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__subtitle">Join The Community</span>
+                        <h2 class="section__title">Discord Community</h2>
+                    </div>
+                    <div class="discord-card">
+                        <div class="discord-card__header">
+                            <img
+                                src="img/hero-avatar.png"
+                                alt="Discord Avatar"
+                                class="discord-avatar"
+                            />
+                            <div class="discord-info">
+                                <h3 class="discord-username">Abid.</h3>
+                                <p class="discord-status">
+                                    <span class="status-indicator online"></span>
+                                    Online
+                                </p>
+                            </div>
+                        </div>
+                        <div class="discord-card__stats">
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <span class="stat-number">1,890</span>
+                                    <span class="stat-label">Members</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-circle"></i>
+                                <div>
+                                    <span class="stat-number">100+</span>
+                                    <span class="stat-label">Online</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discord-card__actions">
+                            <a
+                                href="https://discord.com/users/698131338846404609"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn--discord"
+                            >
+                                <i class="fas fa-user"></i>
+                                <span>View Profile</span>
+                            </a>
+                            <a
+                                href="https://discord.gg/cExzdw4SsY"
+                                class="btn btn--discord-outline"
+                            >
+                                <i class="fas fa-server"></i>
+                                <span>Contact for Server</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="shop" class="section shop">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__subtitle">Premium Offerings</span>
+                        <h2 class="section__title">Shop</h2>
+                    </div>
+                    <div class="shop__grid">
+                        <div class="shop__card">
+                            <div class="shop__badge popular">Popular</div>
+                            <div class="shop__icon-wrapper">
+                                <i class="fab fa-discord shop__icon"></i>
+                            </div>
+                            <h3 class="shop__title">Discord Nitro</h3>
+                            <p class="shop__description">
+                                Get premium Discord features with Nitro
+                                subscription for enhanced communication
+                            </p>
+                            <div class="shop__pricing">
+                                <div class="price-option">
+                                    <span class="price">$9.99</span>
+                                    <span class="duration">/ Monthly</span>
+                                </div>
+                                <div class="price-option">
+                                    <span class="price">$99.99</span>
+                                    <span class="duration">/ Yearly</span>
+                                </div>
+                            </div>
+                            <button
+                                class="btn btn--primary shop__btn"
+                                onclick="openCryptoPayment('Discord Nitro')"
+                            >
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Buy with Crypto</span>
+                            </button>
+                        </div>
+
+                        <div class="shop__card">
+                            <div class="shop__badge new">New</div>
+                            <div class="shop__icon-wrapper">
+                                <i class="fas fa-wand-magic-sparkles shop__icon"></i>
+                            </div>
+                            <h3 class="shop__title">Discord Effects</h3>
+                            <p class="shop__description">
+                                Premium Discord profile effects, avater deco to make your profile stand out
+                            </p>
+                            <div class="shop__pricing">
+                                <div class="price-option">
+                                    <span class="price">$4.99 - $11.00</span>
+                                    <span class="duration">/ One-time</span>
+                                </div>
+                            </div>
+                            <button
+                                class="btn btn--primary shop__btn"
+                                onclick="openCryptoPayment('Discord Effects')"
+                            >
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Buy with Crypto</span>
+                            </button>
+                        </div>
+
+                        <div class="shop__card">
+                            <div class="shop__icon-wrapper">
+                                <i class="fas fa-code shop__icon"></i>
+                            </div>
+                            <h3 class="shop__title">Website Source Code</h3>
+                            <p class="shop__description">
+                                Get this portfolio website's complete source
+                                code with all features and customization
+                            </p>
+                            <div class="shop__pricing">
+                                <div class="price-option">
+                                    <span class="price">$70.99</span>
+                                    <span class="duration">/ One-time</span>
+                                </div>
+                            </div>
+                            <button
+                                class="btn btn--primary shop__btn"
+                                onclick="openCryptoPayment('Website Source Code')"
+                            >
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Buy with Crypto</span>
+                            </button>
+                        </div>
+
+                        <div class="shop__card">
+                            <div class="shop__icon-wrapper">
+                                <i class="fas fa-gamepad shop__icon"></i>
+                            </div>
+                            <h3 class="shop__title">Game Top-ups</h3>
+                            <p class="shop__description">
+                                Top up your favorite games: PUBG, Free Fire,
+                                Mobile Legends & more popular titles
+                            </p>
+                            <div class="shop__pricing">
+                                <div class="price-option">
+                                    <span class="price">Soon!</span>
+                                    <span class="duration">/ Various packages</span>
+                                </div>
+                            </div>
+                            <button
+                                class="btn btn--primary shop__btn"
+                                onclick="openCryptoPayment('Game Top-ups')"
+                            >
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Buy with Crypto</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="crypto-info">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>
+                            We accept:
+                            <strong>Bitcoin (BTC), Litecoin (LTC), Ethereum (ETH)</strong>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section contact">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__subtitle">Let's Connect</span>
+                        <h2 class="section__title">Get In Touch</h2>
+                    </div>
+                    <div class="contact__wrapper">
+                        <div class="contact__content">
+                            <h3 class="contact__title">
+                                Let's talk about everything!
+                            </h3>
+                            <p class="contact__description">
+                                Feel free to reach out for collaborations,
+                                project inquiries, or just a friendly hello. I'm
+                                always open to discussing new projects and
+                                opportunities.
+                            </p>
+                            <form id="contact-form" class="contact__form">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        placeholder="John Doe" 
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="john@gmail.com" 
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        rows="5" 
+                                        placeholder="Your message here..." 
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--large">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Send Message</span>
+                                </button>
+                                <div id="form-message" class="form-message"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__content">
+                <h4 class="footer__title">Quick Links</h4>
+                <ul class="footer__links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h4 class="footer__title">Info</h4>
+                <ul class="footer__links">
+                    <li><a href="terms-of-service.html" target="_blank" rel="noopener noreferrer">Terms</a></li>
+                    <li><a href="website-terms.html" target="_blank" rel="noopener noreferrer">Website Terms</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">
+                &copy; 2025 <strong>ABID HASAN SAJID</strong> • Cyber Portfolio
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+        <div id="crypto-modal" class="crypto-modal">
+            <div class="crypto-modal-content">
+                <span class="crypto-close" onclick="closeCryptoModal()">&times;</span>
+                <h2>Cryptocurrency Payment</h2>
+                <p id="crypto-product" class="crypto-product-name"></p>
+                <div class="crypto-options">
+                    <h3>Choose Your Cryptocurrency</h3>
+                    <div class="crypto-selection">
+                        <button class="crypto-btn" onclick="selectCrypto('BTC')">
+                            <i class="fab fa-bitcoin"></i>
+                            <span>Bitcoin</span>
+                        </button>
+                        <button class="crypto-btn" onclick="selectCrypto('LTC')">
+                            <i class="fas fa-coins"></i>
+                            <span>Litecoin</span>
+                        </button>
+                        <button class="crypto-btn" onclick="selectCrypto('ETH')">
+                            <i class="fab fa-ethereum"></i>
+                            <span>Ethereum</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-address" id="crypto-address-container">
+                    <p>Send payment to this address:</p>
+                    <div class="address-box">
+                        <code id="crypto-wallet"></code>
+                        <button onclick="copyCryptoAddress()" class="copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-note">
+                    <p>
+                        <i class="fas fa-info-circle"></i>
+                        After payment, contact us on Discord with transaction ID
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbot-container">
+            <div class="chatbot-panel" id="chatbot-panel">
+                <div class="chatbot-panel__header">
+                    <div class="chatbot-panel__avatar">
+                        <i class="fas fa-robot"></i>
+                        <span class="chatbot-panel__status"></span>
+                    </div>
+                    <div class="chatbot-panel__info">
+                        <h4>Sajid AI Assistant</h4>
+                        <span class="chatbot-panel__demo">Demo Bot - Not Real AI</span>
+                    </div>
+                    <button class="chatbot-panel__close" id="chatbot-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="chatbot-panel__messages" id="chatbot-messages">
+                    <div class="chatbot-message chatbot-message--bot">
+                        <div class="chatbot-message__bubble">
+                            Hey there! 👋 I'm Sajid's AI assistant. How can I help you today?
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-panel__typing" id="chatbot-typing" style="display: none;">
+                    <div class="chatbot-message chatbot-message--bot">
+                        <div class="chatbot-message__bubble">
+                            <div class="typing-indicator">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-panel__input">
+                    <input 
+                        type="text" 
+                        id="chatbot-input" 
+                        class="chatbot-panel__field"
+                        placeholder="Type your message..."
+                        maxlength="200"
+                    />
+                    <button class="chatbot-panel__send" id="chatbot-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chatbot-bubble" id="chatbot-bubble">
+                <i class="fas fa-comments"></i>
+                <div class="chatbot-notification" id="chatbot-notification">1</div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

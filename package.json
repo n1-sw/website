@@ -1,0 +1,13 @@
+{
+  "name": "modern-portfolio",
+  "version": "2.0.0",
+  "description": "Modern portfolio website for Abid Hasan Sajid with advanced animations and UI/UX",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["portfolio", "website", "personal", "modern", "responsive"],
+  "author": "Abid Hasan Sajid",
+  "license": "MIT"
+}
