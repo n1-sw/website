@@ -1,5 +1,6 @@
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
 const navItems = document.querySelectorAll(".nav__item");
 const navLinks = document.querySelectorAll(".nav__link");
 const header = document.getElementById("header");
@@ -289,27 +290,59 @@ themeToggle.addEventListener("click", () => {
     }
 });
 
+function openNav() {
+    navMenu.classList.add("nav__menu--open");
+    navToggle.classList.add("active");
+    navToggle.setAttribute("aria-expanded", "true");
+    navToggle.setAttribute("aria-label", "Close navigation menu");
+    document.body.style.overflow = "hidden";
+    
+    const firstLink = navMenu.querySelector(".nav__link");
+    if (firstLink) {
+        setTimeout(() => firstLink.focus(), 400);
+    }
+}
+
+function closeNav() {
+    navMenu.classList.remove("nav__menu--open");
+    navToggle.classList.remove("active");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open navigation menu");
+    document.body.style.overflow = "auto";
+    navToggle.focus();
+}
+
 navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("nav__menu--open");
-    changeIcon();
+    if (navMenu.classList.contains("nav__menu--open")) {
+        closeNav();
+    } else {
+        openNav();
+    }
 });
+
+if (navClose) {
+    navClose.addEventListener("click", closeNav);
+}
 
 navItems.forEach((item) => {
     item.addEventListener("click", () => {
         if (navMenu.classList.contains("nav__menu--open")) {
-            navMenu.classList.remove("nav__menu--open");
+            closeNav();
         }
-        changeIcon();
     });
 });
 
-function changeIcon() {
-    if (navMenu.classList.contains("nav__menu--open")) {
-        navToggle.classList.replace("ri-menu-3-line", "ri-close-line");
-    } else {
-        navToggle.classList.replace("ri-close-line", "ri-menu-3-line");
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("nav__menu--open")) {
+        closeNav();
     }
-}
+});
+
+const navOverlay = document.createElement("div");
+navOverlay.className = "nav-overlay";
+document.body.appendChild(navOverlay);
+
+navOverlay.addEventListener("click", closeNav);
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 40) {
@@ -383,49 +416,20 @@ function initContactForm() {
 }
 
 async function sendToDiscordWebhook(formData) {
-    const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1431698257574367272/5dW4OkjpYYe0d19zMPHf4pz9HQLj46qnxZKnWRbIbekT7MXk4DrxXMKMvTB8Z-FcF8s8';
-    
-    const embed = {
-        title: '📬 New Contact Form Submission',
-        color: 6450047,
-        fields: [
-            {
-                name: '👤 Name',
-                value: formData.name,
-                inline: true
-            },
-            {
-                name: '📧 Email',
-                value: formData.email,
-                inline: true
-            },
-            {
-                name: '💬 Message',
-                value: formData.message
-            }
-        ],
-        timestamp: new Date().toISOString(),
-        footer: {
-            text: 'abidhasansajid.me'
-        }
-    };
-
     try {
-        const response = await fetch(DISCORD_WEBHOOK_URL, {
+        const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                username: 'Portfolio Bot',
-                embeds: [embed]
-            })
+            body: JSON.stringify(formData)
         });
 
-        return { success: response.ok };
+        const data = await response.json();
+        return { success: data.success, message: data.message };
     } catch (error) {
-        console.error('Webhook error:', error);
-        return { success: false };
+        console.error('Contact form error:', error);
+        return { success: false, message: 'Network error occurred' };
     }
 }
 
